@@ -3,7 +3,6 @@ import java.util.*;
 
 public class Sensors extends GameView
 { 
-<<<<<<< HEAD
     private ArrayList<NetworkActor> asteroids;
     //800 by 600 screen per person
     public Sensors(Client client, GameState state){
@@ -29,14 +28,8 @@ public class Sensors extends GameView
         super.act(); 
     }
     //public int Screen 
-=======
-  private ArrayList<NetworkActor> asteroids;
    
   //800 by 600 screen per person
-  public Sensors(Client client, GameState state){
-    super(client,state);
-    asteroids = getAsteroids(); 
-  }
   
   //gets ship coordinates, later will compare to other things
   public void compareCords(){
@@ -53,22 +46,4 @@ public class Sensors extends GameView
       int shipy = ship.getY();
     }
   }
-
-  public ArrayList<NetworkActor> getAsteroids(){ 
-    ArrayList<NetworkActor> ret = new ArrayList<NetworkActor>();
-    NetworkActor[] actors = super.getState().getActors();
-    for(int i = actors.length -1; i>=0;i--){
-      NetworkActor n=actors[i];
-      if((n.getType().equals("asteroid"))){
-        ret.add(n);
-      }
-    }
-    return ret;
-  }
-  public void act()
-  {
-    asteroids = getAsteroids();
-   super.act(); 
-  }
->>>>>>> 684bf18e40dfddcfc16073751da3b6d4b89cf8a8
 }
