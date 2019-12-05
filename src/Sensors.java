@@ -57,3 +57,6 @@ public class Sensors extends GameView
         return ship;
     }
 }
+// Use some kind of time system to enlarge a circular object and then find out which objects 
+// are touching it and blip them on the screen
+// deal with zoom by having variables that change the size of the background
