@@ -9,8 +9,8 @@ public class Sensors extends GameView
     //800 by 600 screen per person
     public Sensors(Client client, GameState state){
         super(client,state);
-        asteroids = getAsteroids(); 
-        ship=compareCords();
+        asteroids = getAsteroids();
+        compareCords();
     }
     //gets list of asteroids to use later
     public ArrayList<NetworkActor> getAsteroids(){ 
@@ -27,8 +27,7 @@ public class Sensors extends GameView
 
     public void act()
     {
-        super.act(); 
-        ship = compareCords();
+        super.act();
         asteroids = getAsteroids();
     }
     //public int Screen 
@@ -39,14 +38,15 @@ public class Sensors extends GameView
   //if an asteroid would display on the screen, it is added to a list
   public void compareCords(){
     NetworkActor[] actors =getState().getActors();
-    NetworkActor ship = null;
+    NetworkActor s = null;
     for (NetworkActor a:actors){
       if(a.getType().equals("ship")){
-        ship = a;
+        s = a;
         break;
       }
     }
     if(ship!=null){
+      ship = s;
       int shipx = ship.getX();
       int shipy = ship.getY();
       visibleAsteroids = new ArrayList<NetworkActor>();
