@@ -36,7 +36,7 @@ public class Sensors extends GameView
   
   //gets ship coordinates, then compares those to all asteroids
   //if an asteroid would display on the screen, it is added to a list
-  public void compareCords(){
+  public NetworkActor compareCords(){
     NetworkActor[] actors =getState().getActors();
     NetworkActor s = null;
     for (NetworkActor a:actors){
@@ -56,6 +56,7 @@ public class Sensors extends GameView
         if(xdiff<=400&&ydiff<=300){visibleAsteroids.add(a);}
       }
     }
+    return ship;
   }
       
     public void createScreen(){
@@ -64,5 +65,11 @@ public class Sensors extends GameView
         }
      addObject(ship,ship.getX(),ship.getY());
     }
-    
+    //800 by 600 screen per person
+
+    //gets ship coordinates, later will compare to other things
+ 
 }
+// Use some kind of time system to enlarge a circular object and then find out which objects 
+// are touching it and blip them on the screen
+// deal with zoom by having variables that change the size of the background
